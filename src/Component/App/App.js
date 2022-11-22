@@ -10,10 +10,12 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Button onClick={onClick} />
-      {isShown && <Forum></Forum>}
-    </div>
+    <header class="App-header">
+      <div className="App">
+        <Button onClick={onClick} />
+        {isShown && <Forum></Forum>}
+      </div>
+    </header>
   );
 }
 
