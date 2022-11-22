@@ -1,0 +1,9 @@
+FRONT END PLAN TUESDAY MORNING
+- make a button component
+
+-render 3 buttons in app component
+    -handleClick in app component, we can make three different handleCLICKS - one for each button 
+
+
+What do we want the anon duck button to do?
+- to bring a forum which is a list of posts
