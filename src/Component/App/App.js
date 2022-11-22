@@ -1,20 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import Button from '../Button/Button';
-
-
-
+import react, { useState } from "react";
+import "./App.css";
+import Button from "../Button/Button";
+import Forum from "../Forum/forum";
 
 function App() {
-  
-  function onClick(){
-    
-  }
-
+  const [isShown, setIsShown] = useState(false);
+  const onClick = (event) => {
+    setIsShown(true);
+  };
 
   return (
     <div className="App">
-      <Button onClick={onClick}/>
+      <Button onClick={onClick} />
+      {isShown && <Forum></Forum>}
     </div>
   );
 }
