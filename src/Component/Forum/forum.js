@@ -1,5 +1,6 @@
 import react, {useState} from "react"
-
+import CreatePost from "../Create-Post/create-post";
+import Post from "../Post/post";
 //const [post, setPost] = useState([{ author: "", content: ""
 //}])
 //render List of Postst using map()
@@ -8,14 +9,16 @@ import react, {useState} from "react"
 
 
 function Forum(){
+    const [posts, setPosts] = useState([{ author: "Blue Duck", content: "qua qua"}])
 return (
   <div>
     <h1>Rubber Ducky Forum</h1>
-    <ol>
-      <li>Post 1</li>
-      <li>Post 2</li>
-      <li>Post 3</li>
-    </ol>
+    <ul>
+   {posts.map(function (postObj){
+    return <Post author={postObj.author} content={postObj.content}/>
+})}
+</ul>
+<CreatePost setPosts={setPosts}></CreatePost>
   </div>
 );
 }
