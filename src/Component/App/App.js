@@ -10,7 +10,7 @@ function App() {
   };
 
   return (
-    <header class="App-header">
+    <header className="App-header">
       <div className="App">
         <Button onClick={onClick} />
         {isShown && <Forum></Forum>}
