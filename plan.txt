@@ -13,3 +13,9 @@ uuid as author name
 
 onclick create object = {author: uuid, content: "value of input"}
 state = spread the original list of posts and add new post
+----------------------------------------------------------------------------------------------------------------------------
+Comments Plan---
+-create state for list of comments in the post component and we spread the map the comments here, 
+and hands down as props to comment component
+-create a comment component
+    -input, input state, button that onlcick sets the comments list state

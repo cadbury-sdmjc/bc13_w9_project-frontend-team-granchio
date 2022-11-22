@@ -21,7 +21,7 @@ function CreatePost(props) {
   return(
     <form>
       <label>
-        Text here
+        Post here
         <input type="text" value={text} onChange={handleChange}></input>
       </label>
       <button type="button" onClick={handleClick}>Create Post</button>
