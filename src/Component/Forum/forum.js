@@ -18,7 +18,7 @@ return (
     return <Post author={postObj.author} content={postObj.content}/>
 })}
 </ul>
-<CreatePost setPosts={setPosts}></CreatePost>
+<CreatePost setPosts={setPosts} posts={posts}></CreatePost>
   </div>
 );
 }

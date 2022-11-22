@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function CreatePost(props) {
     const [text, setText] = useState("")
@@ -9,8 +10,12 @@ function CreatePost(props) {
     }
 
     function handleClick(){
-        props.handleInput(text)
-        props.setPosts()
+      const newPost = {
+        author: uuidv4(),
+        content: text
+      }
+        //props.handleInput(text)
+        props.setPosts([...props.posts, newPost])
     }
 
   return(
