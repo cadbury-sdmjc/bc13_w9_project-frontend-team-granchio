@@ -5,6 +5,12 @@ function Post(props) {
   const [comments, setComments] = useState([
     { author: 'rub duck', content: 'this post sucks' },
   ]);
+
+  //when one post is clicked, all the associated comments are displayed
+  //how could this work?
+  //we could use a conditional rendering thing where the comments
+  //map bit only renders/unrenders when the button turns !current
+
   return (
     <div>
       <div className="post">

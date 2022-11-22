@@ -3,6 +3,15 @@ import "./App.css";
 import Button from "../Button/Button";
 import Forum from "../Forum/forum";
 
+
+  
+
+
+
+
+
+
+
 function App() {
   const [isShown, setIsShown] = useState(false);
   const onClick = (event) => {
