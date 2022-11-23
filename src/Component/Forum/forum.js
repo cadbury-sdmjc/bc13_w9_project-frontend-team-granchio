@@ -41,7 +41,7 @@ function Forum() {
       <h1>Rubber Ducky Forum</h1>
       <ul>
         {posts?.map(function (post) {
-          return <Post author={post?.post_id} content={post?.post_content} post={post}/>;
+          return <Post post_title={post?.post_title} author={post?.post_id} content={post?.post_content} post={post}/>;
         })}
       </ul>
       <CreatePost setPosts={setPosts} posts={posts}></CreatePost>
