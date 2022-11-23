@@ -2,9 +2,7 @@ import react, { useState } from 'react';
 import Comment from '../Comment/comment';
 import CreateComment from '../Create-Comment/create-comment';
 function Post(props) {
-  const [comments, setComments] = useState([
-    { author: 'rub duck', content: 'this post sucks' },
-  ]);
+  const [comments, setComments] = useState([]);
 
   //when one post is clicked, all the associated comments are displayed
   //how could this work?

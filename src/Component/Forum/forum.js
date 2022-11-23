@@ -6,9 +6,7 @@ import Post from '../Post/post';
 //render List of Postst using map()
 
 function Forum() {
-  const [posts, setPosts] = useState([
-    { author: 'Blue Duck', content: 'qua qua' },
-  ]);
+  const [posts, setPosts] = useState([]);
   return (
     <div>
       <h1>Rubber Ducky Forum</h1>
