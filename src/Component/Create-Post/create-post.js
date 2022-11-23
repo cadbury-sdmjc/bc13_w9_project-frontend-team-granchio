@@ -8,7 +8,6 @@ function CreatePost(props) {
 const [title, setTitle] = useState("");
  
 
- var sendPost = {}
 
     function handleChange(event) {
         setText(event.target.value);
@@ -20,7 +19,7 @@ const [title, setTitle] = useState("");
 
 
     function handleClick() {
-      fetch("http://example.com/api/endpoint/", {
+      fetch("http://localhost:3000/api/posts", {
   method: "post",
   headers: {
     'Accept': 'application/json',
@@ -34,7 +33,7 @@ const [title, setTitle] = useState("");
   })
 })
 .then( (response) => { 
-   //do something awesome that makes the world a better place
+   props.setRerender(!props.rerender)
 });
     }
 

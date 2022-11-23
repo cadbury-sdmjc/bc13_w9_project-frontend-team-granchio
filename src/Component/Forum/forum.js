@@ -27,15 +27,17 @@ import Post from '../Post/post';
 
 function Forum() {
   const [posts, setPosts] = useState([]);
+  const [rerender, setRerender] = useState(true)
 
   useEffect(() => {
     async function getData() {
       const response = await fetch('http://localhost:3000/api/posts');
       const data = await response.json();
       setPosts([...data.payload]);
+      console.log('fuck you dave')
     }
     getData();
-  }, []);
+  }, [rerender]);
   return (
     <div>
       <h1>Rubber Ducky Forum</h1>
@@ -51,7 +53,7 @@ function Forum() {
           );
         })}
       </ul>
-      <CreatePost setPosts={setPosts} posts={posts}></CreatePost>
+      <CreatePost setPosts={setPosts} posts={posts} rerender={rerender} setRerender={setRerender}></CreatePost  >
     </div>
   );
 }
