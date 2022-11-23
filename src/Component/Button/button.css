@@ -1,9 +1,10 @@
 .anon-duck {
-    padding: 2em;
-background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
+    font-size: 1em;
+    background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
     border-radius: 20px;
     color: white;
     width: 20vw;
-        height: 10vh;
+    height: 10vh;
     border-radius: 20px;
+    font-family: poppins;
 }
