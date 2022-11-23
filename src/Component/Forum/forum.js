@@ -32,8 +32,7 @@ function Forum() {
       const response = await fetch("http://localhost:3000/api/posts");
       const data = await response.json();
       setPosts([...data.payload]);
-      console.log("where stuff? ", posts);
-    }
+        }
     getData();
   }, []);
 
@@ -42,7 +41,7 @@ function Forum() {
       <h1>Rubber Ducky Forum</h1>
       <ul>
         {posts?.map(function (post) {
-          return <Post author={post?.post_id} content={post?.post_content} />;
+          return <Post author={post?.post_id} content={post?.post_content} post={post}/>;
         })}
       </ul>
       <CreatePost setPosts={setPosts} posts={posts}></CreatePost>
