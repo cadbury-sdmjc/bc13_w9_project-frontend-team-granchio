@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import CreatePost from "../Create-Post/create-post";
-import Post from "../Post/post";
+import React, { useState, useEffect } from 'react';
+import CreatePost from '../Create-Post/create-post';
+import Post from '../Post/post';
 //const [post, setPost] = useState([{ author: "", content: ""
 //}])
 //render List of Postst using map()
@@ -27,33 +27,28 @@ import Post from "../Post/post";
 
 function Forum() {
   const [posts, setPosts] = useState([]);
-  const [updates, setUpdates] = useState(false)
-  const forceUpdate = React.useCallback(() => setPosts({}), []);
 
   useEffect(() => {
     async function getData() {
-      setUpdates(true)
-      const response = await fetch("http://localhost:3000/api/posts");
+      const response = await fetch('http://localhost:3000/api/posts');
       const data = await response.json();
       setPosts([...data.payload]);
-      function newListPost(i){
-        forceUpdate()
-        setPosts([...posts, i])
-        setUpdates(false)
-      }
-        }
+    }
     getData();
-    console.log("rica")
-  }, [updates??true]);
-
-
-  
+  }, []);
   return (
     <div>
       <h1>Rubber Ducky Forum</h1>
       <ul>
         {posts?.map(function (post) {
-          return <Post post_title={post?.post_title} author={post?.post_id} content={post?.post_content} post={post}/>;
+          return (
+            <Post
+              post_title={post?.post_title}
+              author={post?.post_id}
+              content={post?.post_content}
+              post={post}
+            />
+          );
         })}
       </ul>
       <CreatePost setPosts={setPosts} posts={posts}></CreatePost>
@@ -61,4 +56,4 @@ function Forum() {
   );
 }
 
-export default Forum
+export default Forum;

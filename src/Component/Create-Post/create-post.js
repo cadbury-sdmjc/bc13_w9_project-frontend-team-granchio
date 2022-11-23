@@ -18,27 +18,26 @@ const [title, setTitle] = useState("");
       setTitle(event.target.value);
     }
 
-    function handleClick(){
-axios
-  .post("http://localhost:3000/api/posts", {
+
+    function handleClick() {
+      fetch("http://example.com/api/endpoint/", {
+  method: "post",
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+
+  //make sure to serialize your JSON body
+  body: JSON.stringify({
     post_title: title,
     post_content: text
   })
-  .then(function (response) {
-    console.log(response);
-    sendPost = {title, text}
-  });
-  newListPost(sendPost)
-  // .catch(function (error) {
-  //   console.log(error);
-  // });
-      // const newPost = {
-      //   author: uuidv4(),
-      //   content: text
-      // }
-      //   //props.handleInput(text)
-      //props.setPosts([...props.posts, sendPost])
+})
+.then( (response) => { 
+   //do something awesome that makes the world a better place
+});
     }
+
 
   return (
     <form>
