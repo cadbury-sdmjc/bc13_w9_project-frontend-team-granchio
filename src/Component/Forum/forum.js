@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import CreatePost from "../Create-Post/create-post";
 import Post from "../Post/post";
 //const [post, setPost] = useState([{ author: "", content: ""
@@ -27,15 +27,27 @@ import Post from "../Post/post";
 
 function Forum() {
   const [posts, setPosts] = useState([]);
+  const [updates, setUpdates] = useState(false)
+  const forceUpdate = React.useCallback(() => setPosts({}), []);
+
   useEffect(() => {
     async function getData() {
+      setUpdates(true)
       const response = await fetch("http://localhost:3000/api/posts");
       const data = await response.json();
       setPosts([...data.payload]);
+      function newListPost(i){
+        forceUpdate()
+        setPosts([...posts, i])
+        setUpdates(false)
+      }
         }
     getData();
-  }, []);
+    console.log("rica")
+  }, [updates??true]);
 
+
+  
   return (
     <div>
       <h1>Rubber Ducky Forum</h1>
@@ -49,4 +61,4 @@ function Forum() {
   );
 }
 
-export default Forum;
+export default Forum
