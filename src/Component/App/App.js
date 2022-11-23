@@ -12,7 +12,14 @@ function App() {
   return (
     <header className="App-header">
       <div className="App">
-        <Button onClick={onClick} />
+        <div className="home-container">
+          <div className="anon-duck-container">
+            <Button onClick={onClick} />
+          </div>
+          <div className="angry-duck-container">
+            <button className="angry-duck-btn">Angry Duck</button>
+          </div>
+        </div>
         {isShown && <Forum></Forum>}
       </div>
     </header>

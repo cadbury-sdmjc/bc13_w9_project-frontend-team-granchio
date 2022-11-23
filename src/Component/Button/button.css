@@ -1,6 +1,9 @@
 .anon-duck {
     padding: 2em;
-    background-color: #023047;
+background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
+    border-radius: 20px;
     color: white;
-    border-radius: 60px;
+    width: 20vw;
+        height: 10vh;
+    border-radius: 20px;
 }
