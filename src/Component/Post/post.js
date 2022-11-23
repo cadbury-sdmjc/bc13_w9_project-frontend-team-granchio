@@ -1,6 +1,7 @@
-import react, { useState } from 'react';
-import Comment from '../Comment/comment';
-import CreateComment from '../Create-Comment/create-comment';
+import react, { useState } from "react";
+import Comment from "../Comment/comment";
+import CreateComment from "../Create-Comment/create-comment";
+
 function Post(props) {
   const [comments, setComments] = useState([]);
 
