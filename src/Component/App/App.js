@@ -1,18 +1,24 @@
+
 import react, { useState } from "react";
 import "./App.css";
 import Button from "../Button/Button";
 import Forum from "../Forum/forum";
 import duckwithspeach from "./duckwithspeach.png"
 
+
 function App() {
   const [isShown, setIsShown] = useState(false);
+  const [anonButtonIsShown, setAnonButtonIsShown] = useState(true)
+
   const onClick = (event) => {
     setIsShown(true);
+    setAnonButtonIsShown(!anonButtonIsShown)
   };
 
   return (
     <header className="App-header">
       <div className="App">
+
       <img className="duck-img"alt = "Duck says How you feel today?" src={require('./duckwithspeach.png')}/>
         <div className="home-container">
           <div className="anon-duck-container">
@@ -26,7 +32,7 @@ function App() {
           <div className="content-wrapper">
             <h2 className="home-h2">SUPPORT EACH OTHER</h2>
             <p className="home-desc">Talk anonymously to your fellow bootcampers and share struggles</p>
-            <Button onClick={onClick} />
+            {anonButtonIsShown && <Button onClick={onClick} />}
             </div>
           </div>
         </div>

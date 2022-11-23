@@ -22,3 +22,8 @@ and hands down as props to comment component(commAuthor, commContent) ✔
     -input, input state, button that onlcick sets the comments list state
 
 render createComment component with a prop of setComment and comment
+----------------------------------------------------------------------------------------------------------------------------
+plan for connecting front and back
+
+
+-find hard coded data and replace with fetch requests
