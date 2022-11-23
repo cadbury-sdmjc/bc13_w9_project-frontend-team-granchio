@@ -5,15 +5,17 @@ import Forum from '../Forum/forum';
 
 function App() {
   const [isShown, setIsShown] = useState(false);
+  const [anonButtonIsShown, setAnonButtonIsShown] = useState(true)
 
   const onClick = (event) => {
     setIsShown(true);
+    setAnonButtonIsShown(!anonButtonIsShown)
   };
 
   return (
     <header className="App-header">
       <div className="App">
-        <Button onClick={onClick} />
+        {anonButtonIsShown && <Button onClick={onClick} />}
         {isShown && <Forum></Forum>}
       </div>
     </header>
