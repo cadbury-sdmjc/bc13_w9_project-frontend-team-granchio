@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import CreatePost from '../Create-Post/create-post';
-import Post from '../Post/post';
+import React, { useState, useEffect } from "react";
+import CreatePost from "../Create-Post/create-post";
+import Post from "../Post/post";
 //const [post, setPost] = useState([{ author: "", content: ""
 //}])
 //render List of Postst using map()
@@ -27,14 +27,13 @@ import Post from '../Post/post';
 
 function Forum() {
   const [posts, setPosts] = useState([]);
-  const [rerender, setRerender] = useState(true)
+  const [rerender, setRerender] = useState(true);
 
   useEffect(() => {
     async function getData() {
-      const response = await fetch('http://localhost:3000/api/posts');
+      const response = await fetch("http://localhost:3000/api/posts");
       const data = await response.json();
       setPosts([...data.payload]);
-      console.log('fuck you dave')
     }
     getData();
   }, [rerender]);
@@ -49,11 +48,18 @@ function Forum() {
               author={post?.post_id}
               content={post?.post_content}
               post={post}
+              rerender={rerender}
+              setRerender={setRerender}
             />
           );
         })}
       </ul>
-      <CreatePost setPosts={setPosts} posts={posts} rerender={rerender} setRerender={setRerender}></CreatePost  >
+      <CreatePost
+        setPosts={setPosts}
+        posts={posts}
+        rerender={rerender}
+        setRerender={setRerender}
+      ></CreatePost>
     </div>
   );
 }
