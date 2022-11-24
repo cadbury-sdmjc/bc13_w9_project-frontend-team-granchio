@@ -2,24 +2,30 @@ import react, { useState } from "react";
 import "./App.css";
 import Button from "../Button/Button";
 import Forum from "../Forum/forum";
-
+import AIDuck from "./AIDuck/AIDuck.js";
 
 function App() {
   const [isShown, setIsShown] = useState(false);
-  const [anonButtonIsShown, setAnonButtonIsShown] = useState(true);
+  const [AiDuckShown, setAiDuckShown] = useState(false);
+  const [showButtonContainer, setshowButtonContainer] = useState(true);
   const speechDuck = require("./duckwithspeach.png");
   const homeDuck = require("./backtohomepageduck.png");
   const onClick = (event) => {
     setIsShown(true);
-    setAnonButtonIsShown(!anonButtonIsShown);
+    setshowButtonContainer(!showButtonContainer);
   };
   function touchedMaDuck() {
-    setAnonButtonIsShown(!anonButtonIsShown);
+    setshowButtonContainer(!showButtonContainer);
     setIsShown(false);
   }
 
+  function onClickDuck() {
+    setAiDuckShown(true);
+    setshowButtonContainer(!showButtonContainer);
+  }
+
   let toClickorNotToCLick = () =>
-    anonButtonIsShown
+    showButtonContainer
       ? console.log("don't touch my duck dude.")
       : touchedMaDuck();
 
@@ -29,10 +35,10 @@ function App() {
         <img
           className="duck-img"
           alt="Duck says How you feel today?"
-          src={anonButtonIsShown ? speechDuck : homeDuck}
+          src={showButtonContainer ? speechDuck : homeDuck}
           onClick={toClickorNotToCLick}
         />
-        {anonButtonIsShown && (
+        {showButtonContainer && (
           <>
             <div className="home-container">
               <div className="anon-duck-container">
@@ -41,7 +47,9 @@ function App() {
                   <p className="home-desc">
                     Submit your mood to your personal duck to brighten your day
                   </p>
-                  <button className="angry-duck-btn">Angry Duck</button>
+                  <button className="angry-duck-btn" onClick={onClickDuck}>
+                    Angry Duck
+                  </button>
                 </div>
               </div>
               <div className="angry-duck-container">
@@ -57,11 +65,8 @@ function App() {
             </div>
           </>
         )}
-        {isShown && (
-          <Forum>
-          </Forum>
-            
-        )}
+        {isShown && <Forum></Forum>}
+        {AiDuckShown && <AIDuck></AIDuck>}
       </div>
     </header>
   );
