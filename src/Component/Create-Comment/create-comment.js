@@ -31,7 +31,7 @@ function CreateComment(props) {
     <form>
       <label>
         Comment here
-        <input type="text" value={text} onChange={handleChange}></input>
+        <textarea type="text" value={text} onChange={handleChange}></textarea>
       </label>
       <button type="button" onClick={handleClick}>
         Create Comment

@@ -30,17 +30,19 @@ function Post(props) {
   };
 
   return (
-    <div>
+    <div className="container-post">
       <div className="post" key={props.post.post_id}>
         <button className="post-title-btn" onClick={onClick}>
-          <h3 className="post-author">{props.post.duck_name}</h3>{" "}
+          <div className="post-author-container">
+            <h5 className="post-author">{props.post.duck_name}: </h5>{" "}
+          </div>{" "}
           {props.post_title}
         </button>
       </div>
       {isShown && (
-        <>
+        <div className="containerBig">
           <div className="comments">
-            <h5>{props.content}</h5>
+            <p className="post-content">{props.content}</p>
             <ul>
               {props.post.comments?.map(function (currentComment) {
                 return (
@@ -56,7 +58,7 @@ function Post(props) {
               post_id={props.post.post_id}
             />
           </div>
-        </>
+        </div>
       )}
     </div>
   );
