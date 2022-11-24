@@ -70,7 +70,7 @@ function Forum() {
       </div>
       <div className="fix-btn-div">
         <button className="fix-button" type="button">
-          Create Post
+          Back to Top
         </button>
       </div>
     </div>
