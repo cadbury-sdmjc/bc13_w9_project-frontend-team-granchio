@@ -1,6 +1,7 @@
 import react, { useState } from "react";
 import Comment from "../Comment/comment";
 import CreateComment from "../Create-Comment/create-comment";
+import "./post.css"
 
 function Post(props) {
 
@@ -32,23 +33,23 @@ const onClick = (event) => {
   return (
     <div>
       <div className="post">
-        <button onClick={onClick}>{props.post_title}</button>
+        <button className="post-title-btn" onClick={onClick}>
+          <h3 className="post-author">Blue Duck: </h3> {props.post_title}
+        </button>
       </div>
-        {isShown && <>
-      <div className="comments">
-        <h5>{props.content}</h5>
-        <ul>
-          {props.post.comments?.map(function (currentComment) {
-            return (
-              <Comment
-                currentComment={currentComment}
-              />
-            );
-          })}
-        </ul>
-        <CreateComment setPosts={props.setPosts} posts={props.posts} />
-      </div>
-        </>}
+      {isShown && (
+        <>
+          <div className="comments">
+            <h5>{props.content}</h5>
+            <ul>
+              {props.post.comments?.map(function (currentComment) {
+                return <Comment currentComment={currentComment} />;
+              })}
+            </ul>
+            <CreateComment setPosts={props.setPosts} posts={props.posts} />
+          </div>
+        </>
+      )}
     </div>
   );
 }

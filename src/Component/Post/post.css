@@ -1,0 +1,25 @@
+.post-title-btn{
+background-color: #83bfcd;
+width: 100%;
+padding: 5%;
+font-size: 1em;
+align-items: center;
+outline: #83bfcd;
+border-width: 0px 0px 1px 0;
+border-color: white;
+color: white;
+font-weight: 800;
+text-align: left
+}
+
+
+.post{
+    align-items: center;
+    border-radius: 5px;
+    width: 100%;
+      margin-left: -20px;
+        position: relative;
+}
+.post-author{
+    margin-top: 0;
+}
