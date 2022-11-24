@@ -12,11 +12,13 @@
 .comment-content{
         font-size: 0.5em;
             text-align: left;
-            padding-left: 3.3%;
+            padding: 3.3%;
+           
           color: black;
     padding-top: 0;
 }
 .author-content-box{
 background: rgba(255, 255, 255, 0.587);
 border-radius: 20px;
+margin-right: 40px;
 }

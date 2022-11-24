@@ -12,9 +12,11 @@ background-color: #83bfcd;
     line-height: 30px
 } 
 .containerALL{
-    width: 100%;
+    width:100%;
+    max-width: 900px;
     height: 100%;
     align-items: center;
+
 }
 
 .post-container{
@@ -23,9 +25,15 @@ background-color: #83bfcd;
     position:relative;
     width: 100%;
     height: auto;
+    border-radius: 30px;
     /* display: flex;
     flex-direction: column;
     justify-content: center; */
+}
+
+.posts-wrapper{
+    background-color: white;
+    border-radius: 30px;
 }
 
 .fix-button {
