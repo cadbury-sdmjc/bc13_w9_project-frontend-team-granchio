@@ -52,22 +52,27 @@ function Forum() {
         rerender={rerender}
         setRerender={setRerender}
       ></CreatePost>
-    <div className="post-container">
-      <ul>
-        {posts?.map(function (post) {
-          return (
-            <Post
-              post_title={post?.post_title}
-              author={post?.post_id}
-              content={post?.post_content}
-              post={post}
-              rerender={rerender}
-              setRerender={setRerender}
-            />
-          );
-        })}
-      </ul>
-       </div>
+      <div className="post-container">
+        <ul>
+          {posts?.map(function (post) {
+            return (
+              <Post
+                post_title={post?.post_title}
+                author={post?.post_id}
+                content={post?.post_content}
+                post={post}
+                rerender={rerender}
+                setRerender={setRerender}
+              />
+            );
+          })}
+        </ul>
+      </div>
+      <div className="fix-btn-div">
+        <button className="fix-button" type="button">
+          Create Post
+        </button>
+      </div>
     </div>
   );
 }

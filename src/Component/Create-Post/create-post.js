@@ -2,7 +2,7 @@ import React, { useState } from "react";
 //import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import newListPost from "../Forum/forum";
-import "./create-post.css"
+import "./create-post.css";
 
 function CreatePost(props) {
   const [text, setText] = useState("");
@@ -37,27 +37,40 @@ function CreatePost(props) {
   }
 
   return (
-    <div className="form-container">
+    <div className="form-container-parent">
+      <div className="profile-container">
+        <div className="profile"></div>
+      </div>
       <form>
-        <label>Title</label>
-        <input
-          placeholder="Post's Title "
-          type="text"
-          value={title}
-          onChange={handleTitle}
-        ></input>
-        <label>Post here </label>
-        <input
-          placeholder="Post's Content"
-          type="text"
-          value={text}
-          onChange={handleChange}
-        ></input>
-
-        <button type="button" onClick={handleClick}>
-          Create Post
-        </button>
+        <div className="inputs-parent-container">
+          <div className="title-div">
+            <label>Title</label>
+            <br />
+            <textarea
+              placeholder="Post's Title... "
+              type="text"
+              value={title}
+              onChange={handleTitle}
+            ></textarea>
+          </div>
+          <div className="content-div">
+            <label>Post here </label>
+            <br />
+            <textarea
+              placeholder="Post's Content..."
+              type="text"
+              value={text}
+              onChange={handleChange}
+            ></textarea>
+          </div>
+        </div>
       </form>
+      <div className="btn-div">
+        <button className="button" type="button" onClick={handleClick}>
+          Submit Post
+        </button>
+      </div>
+      
     </div>
   );
 }

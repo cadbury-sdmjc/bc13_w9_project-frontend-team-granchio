@@ -28,3 +28,24 @@ background-color: #83bfcd;
     flex-direction: column;
     justify-content: center; */
 }
+
+.fix-button {
+    font-size: 0.7em;
+    background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
+    border-radius: 20px;
+    color: white;
+    width: 10vw;
+    height: 6vh;
+    border-radius: 20px;
+    font-family: poppins;
+    font-weight: 800;
+    border: none;
+    position: sticky;
+   
+
+}
+.fix-btn-div{
+    position: fixed;
+        bottom: 5vh;
+        left: 80vw
+}

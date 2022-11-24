@@ -1,10 +1,71 @@
-.form-container{
-    background-color: grey;
-    width: 60%;
-    height: auto
+.form-container-parent{
+    margin-top: 30px;
+    background-color: #83bfcd;
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px
 }
-input{
-    border: solid 2px white;
+input, textarea{
+    border: solid 3px white;
     background-color: #83bfcd;
     border-radius: 8px;
+    /* padding: 12px 200px; */
+    margin: 8px 0;
+    height: 3em;
+    width: 40em;
+    box-sizing: border-box;
+    font-size: 0.5em;
 }
+
+.profile-container{
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+  background-color: coral;
+  border-radius: 50px;
+  margin: 10px 5px 10px 5px;
+}
+
+
+.inputs-parent-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    gap: 20px
+}
+.title-div{
+    background-color: bisque;
+    text-align: left;
+}
+.content-div {
+    background-color: blueviolet;
+text-align: left;
+}
+
+
+.btn-div{
+background-color: rgb(49, 79, 18);
+align-self: flex-end
+
+}
+.profile-container {
+}
+
+.button{
+font-size: 0.7em;
+    background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
+    border-radius: 20px;
+    color: white;
+    width: 15vw;
+    height: 6vh;
+    border-radius: 20px;
+    font-family: poppins;
+    font-weight: 800;
+    border: none;
+}
+

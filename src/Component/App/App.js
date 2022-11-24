@@ -16,11 +16,11 @@ function App() {
   return (
     <header className="App-header">
       <div className="App">
-            <img
-              className="duck-img"
-              alt="Duck says How you feel today?"
-              src={require('./duckwithspeach.png')}
-            />
+        <img
+          className="duck-img"
+          alt="Duck says How you feel today?"
+          src={require("./duckwithspeach.png")}
+        />
         {anonButtonIsShown && (
           <>
             <div className="home-container">
@@ -46,7 +46,11 @@ function App() {
             </div>
           </>
         )}
-        {isShown && <Forum></Forum>}
+        {isShown && (
+          <Forum>
+          </Forum>
+            
+        )}
       </div>
     </header>
   );
