@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import "./create-comment.css"
 
 function CreateComment(props) {
   const [text, setText] = useState("");
@@ -29,12 +30,12 @@ function CreateComment(props) {
 
   return (
     <form>
-      <label>
-        Comment here
+      <h2 className="create-comment-title">
+        Create a comment
         <textarea type="text" value={text} onChange={handleChange}></textarea>
-      </label>
-      <button type="button" onClick={handleClick}>
-        Create Comment
+      </h2>
+      <button className="comment-btn" type="button" onClick={handleClick}>
+        Post Comment
       </button>
     </form>
   );
