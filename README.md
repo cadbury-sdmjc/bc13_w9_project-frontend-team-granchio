@@ -64,3 +64,4 @@ There are mainly two options:
 - Anon Duck: Anon Forum to read, add and comment
 - Angry Duck: submit your mood and receive a feedback from a ducky robot
 
+![Schermata 2022-11-24 alle 22 18 59](https://user-images.githubusercontent.com/111753918/203869775-061e08da-8677-4798-819f-52f3d9df19de.png)
