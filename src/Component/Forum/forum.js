@@ -43,6 +43,11 @@ function Forum() {
           })}
         </ul>
       </div>
+      <div className="fix-btn-div">
+        <button className="fix-button" type="button">
+          Back to Top
+        </button>
+      </div>
     </div>
   );
 }
