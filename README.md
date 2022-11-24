@@ -59,3 +59,8 @@ Unit tests were run using Jest
 
 ![Schermata 2022-11-24 alle 22 13 09](https://user-images.githubusercontent.com/111753918/203869462-d1a98a39-0051-42ed-bf82-bd627ce30851.png)
 
+### Granchio HomePage
+There are mainly two options:
+- Anon Duck: Anon Forum to read, add and comment
+- Angry Duck: submit your mood and receive a feedback from a ducky robot
+
