@@ -23,6 +23,7 @@ function CreateComment(props) {
       }),
     }).then((response) => {
       props.setRerender(!props.rerender);
+      setText("");
     });
   }
 
