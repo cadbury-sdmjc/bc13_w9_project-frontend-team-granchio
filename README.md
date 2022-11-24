@@ -13,17 +13,25 @@ Some people are not comfortable sharing their problems publicly and it's never e
 Create an app where bootcamper are free to the support they need in a complete anonymous way and/or with the help of a rubbery angry ducky!
 
 ## Authors 
-- Federica Costantino @ricacostt
+- Federica Costantino - @ricacostt
 - Chris Sanger
 - Nicholas Pervez
 - Mike Charalambides
 
+
+## project management tools and design
+Trello
+Figma
+Excalidraw
 ## Languages
 HTML 5
 CSS3
 JavaScript
 ## Frameworks & Libraries
 Node.js
+Nodemon
+Pg
+Dotenv
 Express.js
 React.js
 Jest
@@ -65,3 +73,10 @@ There are mainly two options:
 - Angry Duck: submit your mood and receive a feedback from a ducky robot
 
 ![Schermata 2022-11-24 alle 22 18 59](https://user-images.githubusercontent.com/111753918/203869775-061e08da-8677-4798-819f-52f3d9df19de.png)
+
+This is one of the component created: create a new Post.
+Just write a title and a content and press the Submit Post!
+
+To write a post no matter where you are on the page click on the Submit Button on the right bottom corner, it will bring you up to the page!
+
+To go back to the HomePage click on the Crabby Ducky at the top!
