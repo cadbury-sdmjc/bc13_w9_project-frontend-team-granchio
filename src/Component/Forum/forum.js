@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
-import CreatePost from "../Create-Post/create-post";
-import Post from "../Post/post";
+
+import React, { useState, useEffect } from 'react';
+import CreatePost from '../Create-Post/create-post';
+import Post from '../Post/post';
+import "./forum.css"
+
 //const [post, setPost] = useState([{ author: "", content: ""
 //}])
 //render List of Postst using map()
@@ -38,8 +41,18 @@ function Forum() {
     getData();
   }, [rerender]);
   return (
-    <div>
-      <h1>Rubber Ducky Forum</h1>
+    <div className="containerALL">
+      <div className="title-forum">
+        <h1 className="read">Read, Post, Comment</h1>
+        <h3 className="anon">Anonymously!</h3>
+      </div>
+      <CreatePost
+        setPosts={setPosts}
+        posts={posts}
+        rerender={rerender}
+        setRerender={setRerender}
+      ></CreatePost>
+    <div className="post-container">
       <ul>
         {posts?.map(function (post) {
           return (
@@ -54,12 +67,7 @@ function Forum() {
           );
         })}
       </ul>
-      <CreatePost
-        setPosts={setPosts}
-        posts={posts}
-        rerender={rerender}
-        setRerender={setRerender}
-      ></CreatePost>
+       </div>
     </div>
   );
 }

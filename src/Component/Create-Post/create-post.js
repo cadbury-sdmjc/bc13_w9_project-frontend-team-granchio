@@ -2,6 +2,7 @@ import React, { useState } from "react";
 //import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import newListPost from "../Forum/forum";
+import "./create-post.css"
 
 function CreatePost(props) {
   const [text, setText] = useState("");
@@ -36,17 +37,28 @@ function CreatePost(props) {
   }
 
   return (
-    <form>
-      <label>Title</label>
-      <input type="text" value={title} onChange={handleTitle}></input>
-      <label>
-        Post here
-        <input type="text" value={text} onChange={handleChange}></input>
-      </label>
-      <button type="button" onClick={handleClick}>
-        Create Post
-      </button>
-    </form>
+    <div className="form-container">
+      <form>
+        <label>Title</label>
+        <input
+          placeholder="Post's Title "
+          type="text"
+          value={title}
+          onChange={handleTitle}
+        ></input>
+        <label>Post here </label>
+        <input
+          placeholder="Post's Content"
+          type="text"
+          value={text}
+          onChange={handleChange}
+        ></input>
+
+        <button type="button" onClick={handleClick}>
+          Create Post
+        </button>
+      </form>
+    </div>
   );
 }
 

@@ -1,0 +1,10 @@
+.form-container{
+    background-color: grey;
+    width: 60%;
+    height: auto
+}
+input{
+    border: solid 2px white;
+    background-color: #83bfcd;
+    border-radius: 8px;
+}
