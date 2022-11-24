@@ -1,3 +1,8 @@
+# Authors 
+- Federica Costantino - @ricacostt
+- Chris Sanger
+- Nicholas Pervez
+- Mike Charalambides
 
 # Granchio
 
@@ -12,29 +17,22 @@ Some people are not comfortable sharing their problems publicly and it's never e
 ## The solution
 Create an app where bootcamper are free to the support they need in a complete anonymous way and/or with the help of a rubbery angry ducky!
 
-## Authors 
-- Federica Costantino - @ricacostt
-- Chris Sanger
-- Nicholas Pervez
-- Mike Charalambides
-
-
 ## project management tools and design
-Trello
-Figma
+Trello,
+Figma,
 Excalidraw
 ## Languages
-HTML 5
-CSS3
+HTML 5,
+CSS3,
 JavaScript
 ## Frameworks & Libraries
-Node.js
-Nodemon
-Pg
-Dotenv
-Express.js
-React.js
-Jest
+Node.js,
+Nodemon,
+Pg,
+Dotenv,
+Express.js,
+React.js,
+Jest,
 Cypress
 
 # Run Locally
@@ -80,3 +78,5 @@ Just write a title and a content and press the Submit Post!
 To write a post no matter where you are on the page click on the Submit Button on the right bottom corner, it will bring you up to the page!
 
 To go back to the HomePage click on the Crabby Ducky at the top!
+
+Thank you!
