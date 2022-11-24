@@ -19,6 +19,7 @@ text-align: left
     width: 100%;
       margin-left: -20px;
         position: relative;
+        
 }
 .post-author{
     margin-top: 0;
@@ -28,13 +29,17 @@ text-align: left
   width: 25%;
   padding-left: 0.5em;
   border-radius: 20px;
-  background-color: white
+  background-color: rgba(255, 255, 255, 0.604)
 }
 .post-content{
 
   font-size: 0.7em;
   text-align: left;
-  padding: 3.3%
+  padding: 3.3%;
+  border-radius: 20px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.587);
+  margin-right: 40px;
 }
 
 .container-post {
