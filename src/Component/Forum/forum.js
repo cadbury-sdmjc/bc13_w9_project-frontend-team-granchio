@@ -3,63 +3,6 @@ import CreatePost from "../Create-Post/create-post";
 import Post from "../Post/post";
 import "./forum.css";
 
-function Forum() {
-  const [posts, setPosts] = useState([]);
-  const [rerender, setRerender] = useState(true);
-
-  //   useEffect(() => { //if you have uncommented this because the db is down, scroll to the bottom, and uncomment the function getAllPostsandComments
-  //   function backupHeroFunction() {
-  //     const backupStatePosts = getAllPostsandComments();
-  //     setPosts(backupStatePosts);
-  //   }backupHeroFunction()
-  // }, [rerender])
-
-  useEffect(() => {
-    //if the database is down, comment out this useEffect, and uncomment the one above it
-    async function getData() {
-      const response = await fetch("http://localhost:3000/api/posts");
-      const data = await response.json();
-      setPosts([...data.payload]);
-    }
-    getData();
-  }, [rerender]);
-  return (
-    <div className="containerALL">
-      <div className="title-forum">
-        <h1 className="read">Read, Post, Comment</h1>
-        <h3 className="anon">Anonymously!</h3>
-      </div>
-      <CreatePost
-        setPosts={setPosts}
-        posts={posts}
-        rerender={rerender}
-        setRerender={setRerender}
-      ></CreatePost>
-      <div className="post-container">
-        <ul>
-          {posts?.map(function (post) {
-            return (
-              <Post
-                post_title={post?.post_title}
-                author={post?.post_id}
-                content={post?.post_content}
-                post={post}
-                rerender={rerender}
-                setRerender={setRerender}
-              />
-            );
-          })}
-        </ul>
-      </div>
-      <div className="fix-btn-div">
-        <button className="fix-button" type="button">
-          Back to Top
-        </button>
-      </div>
-    </div>
-  );
-}
-
 const backupPosts = [
   {
     post_id: 1,
@@ -115,15 +58,75 @@ const backupComments = [
   },
 ];
 
-// function getAllPostsandComments() {
-//   const allPosts = backupPosts;
-//   const allComments = backupComments;
-//   return allPosts.rows.map((post) => {
-//     return {
-//       ...post,
-//       comments: allComments.rows.filter((c) => c.post_id === post.post_id),
-//     };
-//   });
-// }
+function Forum() {
+  const [posts, setPosts] = useState([]);
+  const [rerender, setRerender] = useState(true);
+
+    useEffect(() => { //if you have uncommented this because the db is down, scroll to the bottom, and uncomment the function getAllPostsandComments
+    function backupHeroFunction() {
+      const backupStatePosts = getAllPostsandComments();
+      setPosts(backupStatePosts);
+    }backupHeroFunction()
+  }, [rerender])
+
+  // useEffect(() => {
+  //   //if the database is down, comment out this useEffect, and uncomment the one above it
+  //   async function getData() {
+  //     const response = await fetch("http://localhost:3000/api/posts");
+  //     const data = await response.json();
+  //     setPosts([...data.payload]);
+  //   }
+  //   getData();
+  // }, [rerender]);
+  return (
+    <div className="containerALL">
+      <div className="title-forum">
+        <h1 className="read">Read, Post, Comment</h1>
+        <h3 className="anon">Anonymously!</h3>
+      </div>
+      <CreatePost
+        setPosts={setPosts}
+        posts={posts}
+        rerender={rerender}
+        setRerender={setRerender}
+      ></CreatePost>
+      <div className="post-container">
+        <ul>
+          {posts?.map(function (post) {
+            return (
+              <Post
+                post_title={post?.post_title}
+                author={post?.post_id}
+                content={post?.post_content}
+                post={post}
+                rerender={rerender}
+                setRerender={setRerender}
+              />
+            );
+          })}
+        </ul>
+      </div>
+      <div className="fix-btn-div">
+      <a href="#top">
+        <button className="fix-button" type="button">
+          Back to Top
+        </button></a>
+      </div>
+    </div>
+  );
+}
+
+
+
+function getAllPostsandComments() {
+  const allPosts = backupPosts;
+  const allComments = backupComments;
+  return allPosts.rows.map((post) => {
+    return {
+      ...post,
+      comments: allComments.rows.filter((c) => c.post_id === post.post_id),
+    };
+  });
+}
 
 export default Forum;

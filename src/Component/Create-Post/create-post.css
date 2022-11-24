@@ -67,3 +67,16 @@ font-size: 0.7em;
     border: none;
 }
 
+.button:hover{
+    font-size: 0.7em;
+    background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
+        border-radius: 20px;
+        color: white;
+        width: 10.3vw;
+        height: 6.3vh;
+        border-radius: 20px;
+        font-family: poppins;
+        font-weight: 800;
+        border: none;
+    }
+
