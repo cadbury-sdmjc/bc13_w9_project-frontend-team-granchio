@@ -1,7 +1,7 @@
 import react, { useState } from "react";
 import Comment from "../Comment/comment";
 import CreateComment from "../Create-Comment/create-comment";
-import "./post.css"
+import "./post.css";
 
 function Post(props) {
   //when one post is clicked, all the associated comments are displayed
@@ -33,7 +33,8 @@ function Post(props) {
     <div>
       <div className="post" key={props.post.post_id}>
         <button className="post-title-btn" onClick={onClick}>
-          <h3 className="post-author">Blue Duck: </h3> {props.post_title}
+          <h3 className="post-author">{props.post.duck_name}</h3>{" "}
+          {props.post_title}
         </button>
       </div>
       {isShown && (
@@ -42,7 +43,9 @@ function Post(props) {
             <h5>{props.content}</h5>
             <ul>
               {props.post.comments?.map(function (currentComment) {
-                return <Comment currentComment={currentComment} />;
+                return (
+                  <Comment post={props.post} currentComment={currentComment} />
+                );
               })}
             </ul>
             <CreateComment
