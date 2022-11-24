@@ -1,17 +1,27 @@
-import react, { useState } from 'react';
-import './App.css';
-import Button from '../Button/Button';
-import Forum from '../Forum/forum';
-import duckwithspeach from './duckwithspeach.png';
+import react, { useState } from "react";
+import "./App.css";
+import Button from "../Button/Button";
+import Forum from "../Forum/forum";
+
 
 function App() {
   const [isShown, setIsShown] = useState(false);
   const [anonButtonIsShown, setAnonButtonIsShown] = useState(true);
-
+  const speechDuck = require("./duckwithspeach.png");
+  const homeDuck = require("./backtohomepageduck.png");
   const onClick = (event) => {
     setIsShown(true);
     setAnonButtonIsShown(!anonButtonIsShown);
   };
+  function touchedMaDuck() {
+    setAnonButtonIsShown(!anonButtonIsShown);
+    setIsShown(false);
+  }
+
+  let toClickorNotToCLick = () =>
+    anonButtonIsShown
+      ? console.log("don't touch my duck dude.")
+      : touchedMaDuck();
 
   return (
     <header className="App-header">
@@ -19,7 +29,8 @@ function App() {
         <img
           className="duck-img"
           alt="Duck says How you feel today?"
-          src={require("./duckwithspeach.png")}
+          src={anonButtonIsShown ? speechDuck : homeDuck}
+          onClick={toClickorNotToCLick}
         />
         {anonButtonIsShown && (
           <>
