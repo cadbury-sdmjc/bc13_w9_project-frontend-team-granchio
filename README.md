@@ -43,7 +43,7 @@ clone the repo for backend
 ```git clone bcw9backend....```
 
 clone the repo for frontend
-```git clone bcw9fronend```
+```git clone https://github.com/SchoolOfCode/bc13_w9_project-frontend-team-granchio.git```
 
 install dependencies in both of the repos
 ```npm install```
@@ -58,7 +58,7 @@ run cypress
 ```npx run cypress:open```
 
 Unit tests were run using Jest
-```test?```
+```npm test```
 
 
 # The app
