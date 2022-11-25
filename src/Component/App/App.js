@@ -17,11 +17,12 @@ function App() {
   function touchedMaDuck() {
     setshowButtonContainer(!showButtonContainer);
     setIsShown(false);
+    setAiDuckShown(false);
   }
 
   function onClickDuck() {
-    setAiDuckShown(true);
     setshowButtonContainer(!showButtonContainer);
+    setAiDuckShown(true);
   }
 
   let toClickorNotToCLick = () =>
@@ -66,7 +67,7 @@ function App() {
           </>
         )}
         {isShown && <Forum></Forum>}
-        {AiDuckShown && <AIDuck></AIDuck>}
+        <div>{AiDuckShown && <AIDuck></AIDuck>}</div>
       </div>
     </header>
   );
