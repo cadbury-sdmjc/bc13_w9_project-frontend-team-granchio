@@ -5,6 +5,7 @@ import "./forum.css";
 
 function Forum() {
   const [posts, setPosts] = useState([]);
+  const [reversePosts, setReversePosts] = useState(posts.slice().reverse())
   const [rerender, setRerender] = useState(true);
 
   // useEffect(() => { no longer needed, here for posterity
@@ -21,6 +22,7 @@ function Forum() {
       const response = await fetch("http://localhost:3000/api/posts");
       const data = await response.json();
       setPosts([...data.payload]);
+      setReversePosts(posts.slice().reverse())
     }
     getData();
   }, [rerender]);
@@ -39,7 +41,7 @@ function Forum() {
       <div className="posts-wrapper">
         <div className="post-container">
           <ul>
-            {posts?.map(function (post) {
+            {reversePosts?.map(function (post) {
               return (
                 <Post
                   post_title={post?.post_title}
