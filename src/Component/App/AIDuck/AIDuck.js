@@ -10,7 +10,7 @@ function CreateDuck(props) {
   const happyAkita =
   "https://sayingimages.com/wp-content/uploads/super-happy-memes.jpg";
   const robotimg = 'https://thumbs.dreamstime.com/b/cartoon-silly-robot-looking-55524172.jpg'
-  const [state, dispatch] = useReducer(reducer, { emotion: "", image: happyAkita });
+  const [state, dispatch] = useReducer(reducer, { emotion: "", image: '' });
 
 
 
