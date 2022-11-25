@@ -1,7 +1,7 @@
 # Authors 
 - Federica Costantino - @ricacostt
 - Chris Sanger - @C0dingChris
-- Nicholas Pervez - @nicholas
+- Nicholas Pervez - @nicholaspervez
 - Mike Charalambides - @MikeChara
 
 # Granchio
