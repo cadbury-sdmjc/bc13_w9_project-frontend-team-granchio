@@ -44,6 +44,7 @@ function CreateDuck(props) {
     const matchArray = keyWords.filter((word) => stringArray.includes(word));
     dispatch({ string: matchArray[0] }); //for now just the first word found
   }
+ 
 
   function handleClick() {
     //calls function with state
