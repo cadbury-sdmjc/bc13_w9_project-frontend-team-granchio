@@ -1,28 +1,34 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer } from 'react';
 
 function CreateDuck(props) {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [isShown, setIsShown] = useState(false);
   const [submitButtonShown, setSubmitButtonShown] = useState(true);
   const [resetButtonShown, setResetButtonShown] = useState(false);
   const sadKeanu =
-  "https://media.vanityfair.com/photos/5df907d66056aa0008852c0a/master/pass/the-decade-in-content-sad-keanu.jpg";
+    'https://media.vanityfair.com/photos/5df907d66056aa0008852c0a/master/pass/the-decade-in-content-sad-keanu.jpg';
   const happyAkita =
-  "https://sayingimages.com/wp-content/uploads/super-happy-memes.jpg";
-  const robotimg = 'https://thumbs.dreamstime.com/b/cartoon-silly-robot-looking-55524172.jpg'
-  const [state, dispatch] = useReducer(reducer, { emotion: "", image: '' });
-
-
+    'https://sayingimages.com/wp-content/uploads/super-happy-memes.jpg';
+  const robotimg =
+    'https://thumbs.dreamstime.com/b/cartoon-silly-robot-looking-55524172.jpg';
+  const [state, dispatch] = useReducer(reducer, { emotion: '', image: '' });
 
   function reducer(state, action) {
     switch (action.string) {
-      case "happy":
-        return { emotion: "I am so glad you are happy!! Check this out...", image: happyAkita };
-      case "sad":
-        return { emotion: "I am so sorry you are sad!! Check this out...", image: sadKeanu };
+      case 'happy':
+        return {
+          emotion: 'I am so glad you are happy!! Check this out...',
+          image: happyAkita,
+        };
+      case 'sad':
+        return {
+          emotion: 'I am so sorry you are sad!! Check this out...',
+          image: sadKeanu,
+        };
       default:
         return {
-          emotion: "Sorry I am a RobotDuck, tell me if you are happy or sad...", image: robotimg
+          emotion: 'Sorry I am a RobotDuck, tell me if you are happy or sad...',
+          image: robotimg,
         };
     }
   }
@@ -33,20 +39,17 @@ function CreateDuck(props) {
   }
 
   function identifyKeyWords(userString) {
-    const keyWords = ["happy", "sad"];
-    const stringArray = userString.split(" ");
-    const matchArray = keyWords.filter((word) =>
-      stringArray.includes(word)
-    );
+    const keyWords = ['happy', 'sad'];
+    const stringArray = userString.split(' ');
+    const matchArray = keyWords.filter((word) => stringArray.includes(word));
     dispatch({ string: matchArray[0] }); //for now just the first word found
-    
   }
 
   function handleClick() {
     //calls function with state
     identifyKeyWords(text);
     setIsShown(!isShown);
-    setText("");
+    setText('');
     setResetButtonShown(!resetButtonShown);
     setSubmitButtonShown(!submitButtonShown);
   }
@@ -94,7 +97,11 @@ function CreateDuck(props) {
 
         {resetButtonShown && (
           <div>
-            <img alt="happy/sad" src={state.image} style={{ height: "400px" }} />
+            <img
+              alt="happy/sad"
+              src={state.image}
+              style={{ height: '400px' }}
+            />
           </div>
         )}
       </div>
