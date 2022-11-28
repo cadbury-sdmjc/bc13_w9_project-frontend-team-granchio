@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { useState, useContext } from "react";
 import "./create-comment.css"
+import {UserContext} from '../App/App.js'
 
 function CreateComment(props) {
   const [text, setText] = useState("");
+  const setIsShown = useContext(UserContext)
 
   function handleChange(event) {
     setText(event.target.value);
@@ -23,6 +24,7 @@ function CreateComment(props) {
         comment_content: text,
       }),
     }).then((response) => {
+      setIsShown(true)
       props.setRerender(!props.rerender);
       setText("");
     });
