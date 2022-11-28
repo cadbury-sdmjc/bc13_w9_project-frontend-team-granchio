@@ -38,42 +38,34 @@ function App() {
 
   return (
     <header className="App-header">
-      <div className="App">
-        <img
-          className="duck-img"
-          alt="Duck says How are you feeling today?"
-          src={showButtonContainer ? speechDuck : homeDuck}
-          onClick={toClickorNotToCLick}
-        />
-        {showButtonContainer && (
-          <>
-            <div className="home-container">
-              <div className="anon-duck-container">
-                <div className="content-wrapper">
-                  <h2 className="home-h2">CHEER ME UP</h2>
-                  <p className="home-desc">Submit your mood to your personal duck to brighten your day</p>
-                  <button className="angry-duck-btn" onClick={onClickDuck}>
-                    Angry Duck
-                  </button>
-                </div>
-              </div>
-              <div className="angry-duck-container">
-                <div className="content-wrapper">
-                  <h2 className="home-h2">SUPPORT EACH OTHER</h2>
-                  <p className="home-desc">Talk anonymously to your fellow bootcampers and share struggles</p>
-                  <Button onClick={onClick} />
-                </div>
-              </div>
+      <img
+        className="duck-img"
+        alt="Duck says How are you feeling today?"
+        src={showButtonContainer ? speechDuck : homeDuck}
+        onClick={toClickorNotToCLick}
+      />
+      {showButtonContainer && (
+        <>
+          <div className="home-container">
+            <div className="duck-container">
+              <h2>CHEER ME UP</h2>
+              <p>Submit your mood to your personal duck to brighten your day</p>
+              <Button onClick={onClickDuck}>Angry duck</Button>
             </div>
-          </>
-        )}
-        {isShown && (
-          <UserContext.Provider value={setIsShown}>
-            <Forum showForum={onClick} isShown={isShown}></Forum>
-          </UserContext.Provider>
-        )}
-        <div>{AiDuckShown && <AIDuck></AIDuck>}</div>
-      </div>
+            <div className="duck-container">
+              <h2>SUPPORT EACH OTHER</h2>
+              <p>Talk anonymously to your fellow bootcampers and share struggles</p>
+              <Button onClick={onClick}>Anon duck</Button>
+            </div>
+          </div>
+        </>
+      )}
+      {isShown && (
+        <UserContext.Provider value={setIsShown}>
+          <Forum showForum={onClick} isShown={isShown}></Forum>
+        </UserContext.Provider>
+      )}
+      <div>{AiDuckShown && <AIDuck></AIDuck>}</div>
     </header>
   );
 }
