@@ -1,31 +1,24 @@
-import React, { useState, useEffect } from "react";
-import CreatePost from "../Create-Post/create-post";
-import Post from "../Post/post";
-import "./forum.css";
+import React, { useState, useEffect } from 'react';
+import CreatePost from '../Create-Post/create-post';
+import Post from '../Post/post';
+import './forum.css';
 
-function Forum() {
-  const [posts, setPosts] = useState([{posts:'', reversePosts:''}]);
-  // const [reversePosts, setReversePosts] = useState({posts:[...data.payload], reversePosts:[...data.payload].slice().reverse()})
+function Forum({isShown}) {
+  const [posts, setPosts] = useState([{ posts: '', reversePosts: '' }]);
   const [rerender, setRerender] = useState(true);
 
-  // useEffect(() => { no longer needed, here for posterity
-  //   //if you have uncommented this because the db is down, scroll to the bottom, and uncomment the function getAllPostsandComments
-  //   function backupHeroFunction() {
-  //     setPosts(backupPostsWithComments);
-  //   }
-  //   backupHeroFunction();
-  // }, [rerender]);
-
   useEffect(() => {
-    //if the database is down, comment out this useEffect, and uncomment the one above it
     async function getData() {
-      const response = await fetch("http://localhost:3000/api/posts");
+      const response = await fetch('http://localhost:3000/api/posts');
       const data = await response.json();
-      console.log(data)
-      setPosts({posts:[...data.payload], reversePosts:[...data.payload].slice().reverse()});
+      console.log(data);
+      setPosts({
+        posts: [...data.payload],
+        reversePosts: [...data.payload].slice().reverse(),
+      });
     }
     getData();
-  }, [rerender]);
+  }, [rerender, isShown]);
   return (
     <div className="containerALL">
       <div className="title-forum">
