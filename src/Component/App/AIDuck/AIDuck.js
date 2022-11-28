@@ -1,33 +1,31 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useReducer } from "react";
+const sadKeanu =
+  "https://media.vanityfair.com/photos/5df907d66056aa0008852c0a/master/pass/the-decade-in-content-sad-keanu.jpg";
+const happyAkita = "https://sayingimages.com/wp-content/uploads/super-happy-memes.jpg";
+const robotimg = "https://thumbs.dreamstime.com/b/cartoon-silly-robot-looking-55524172.jpg";
 
 function CreateDuck(props) {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [isShown, setIsShown] = useState(false);
   const [submitButtonShown, setSubmitButtonShown] = useState(true);
   const [resetButtonShown, setResetButtonShown] = useState(false);
-  const sadKeanu =
-    'https://media.vanityfair.com/photos/5df907d66056aa0008852c0a/master/pass/the-decade-in-content-sad-keanu.jpg';
-  const happyAkita =
-    'https://sayingimages.com/wp-content/uploads/super-happy-memes.jpg';
-  const robotimg =
-    'https://thumbs.dreamstime.com/b/cartoon-silly-robot-looking-55524172.jpg';
-  const [state, dispatch] = useReducer(reducer, { emotion: '', image: '' });
+  const [state, dispatch] = useReducer(reducer, { emotion: "", image: "" });
 
   function reducer(state, action) {
     switch (action.string) {
-      case 'happy':
+      case "happy":
         return {
-          emotion: 'I am so glad you are happy!! Check this out...',
+          emotion: "I am so glad you are happy!! Check this out...",
           image: happyAkita,
         };
-      case 'sad':
+      case "sad":
         return {
-          emotion: 'I am so sorry you are sad!! Check this out...',
+          emotion: "I am so sorry you are sad!! Check this out...",
           image: sadKeanu,
         };
       default:
         return {
-          emotion: 'Sorry I am a RobotDuck, tell me if you are happy or sad...',
+          emotion: "Sorry I am a RobotDuck, tell me if you are happy or sad...",
           image: robotimg,
         };
     }
@@ -39,18 +37,17 @@ function CreateDuck(props) {
   }
 
   function identifyKeyWords(userString) {
-    const keyWords = ['happy', 'sad'];
-    const stringArray = userString.split(' ');
+    const keyWords = ["happy", "sad"];
+    const stringArray = userString.split(" ");
     const matchArray = keyWords.filter((word) => stringArray.includes(word));
     dispatch({ string: matchArray[0] }); //for now just the first word found
   }
- 
 
   function handleClick() {
     //calls function with state
     identifyKeyWords(text);
     setIsShown(!isShown);
-    setText('');
+    setText("");
     setResetButtonShown(!resetButtonShown);
     setSubmitButtonShown(!submitButtonShown);
   }
@@ -63,25 +60,21 @@ function CreateDuck(props) {
 
   return (
     <div className="form-container-parent">
-      <div className="profile-container">
-        <div className="profile"></div>
-      </div>
       <form>
-        <div className="inputs-parent-container">
-          <br />
-        </div>
         <div className="content-div">
-          <label>Robot AI Cyber Ducky</label>
-          <br />
+          <h2>Robot AI Cyber Ducky</h2>
           {submitButtonShown && (
-            <textarea
-              placeholder="Hello, I am a Duck. What can I do for you?"
-              type="text"
-              value={text}
-              onChange={handleChange}
-            ></textarea>
+            <label>
+              How are you feeling today?
+              <textarea
+                placeholder="Hello, I am a Duck. What can I do for you?"
+                type="text"
+                value={text}
+                onChange={handleChange}
+              ></textarea>
+            </label>
           )}
-          {isShown && <textarea type="text" value={state.emotion}></textarea>}
+          {isShown && <textarea type="text" value={state.emotion} readOnly></textarea>}
         </div>
       </form>
       <div className="btn-div">
@@ -98,11 +91,7 @@ function CreateDuck(props) {
 
         {resetButtonShown && (
           <div>
-            <img
-              alt="happy/sad"
-              src={state.image}
-              style={{ height: '400px' }}
-            />
+            <img alt="happy/sad" src={state.image} style={{ height: "400px" }} />
           </div>
         )}
       </div>

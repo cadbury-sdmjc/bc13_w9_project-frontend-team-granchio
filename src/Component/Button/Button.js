@@ -1,7 +1,6 @@
-import React from 'react';
-import "./button.css"
-export default function Button({onClick}) {
-
+import React from "react";
+import "./button.css";
+export default function Button({ onClick }) {
   return (
     <div>
       <button className="anon-duck" type="button" onClick={onClick}>

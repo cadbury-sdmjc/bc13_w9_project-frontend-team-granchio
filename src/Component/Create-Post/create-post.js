@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-//import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
-import newListPost from "../Forum/forum";
 import "./create-post.css";
 
-function CreatePost(props) {
+function CreatePost({ setRerender }) {
   const [text, setText] = useState("");
   const [title, setTitle] = useState("");
 
@@ -16,8 +13,8 @@ function CreatePost(props) {
     setTitle(event.target.value);
   }
 
-  function handleClick() {
-    fetch("http://localhost:3000/api/posts", {
+  async function handleClick() {
+    await fetch("http://localhost:3000/api/posts", {
       method: "post",
       headers: {
         Accept: "application/json",
@@ -29,11 +26,10 @@ function CreatePost(props) {
         post_title: title,
         post_content: text,
       }),
-    }).then((response) => {
-      props.setRerender(!props.rerender);
-      setText("");
-      setTitle("");
     });
+    setRerender();
+    setText("");
+    setTitle("");
   }
 
   return (
@@ -44,19 +40,15 @@ function CreatePost(props) {
       <form>
         <div className="inputs-parent-container">
           <div className="title-div">
-            <label>Title</label>
-            <br />
-            <textarea
-              placeholder="Post's Title... "
-              type="text"
-              value={title}
-              onChange={handleTitle}
-            ></textarea>
+            <label>
+              Title
+              <textarea placeholder="Post's Title... " type="text" value={title} onChange={handleTitle}></textarea>
+            </label>
           </div>
           <div className="content-div">
-            <label>Post here </label>
-            <br />
+            <label for="text-input-id">Post here</label>
             <textarea
+              id="text-input-id"
               placeholder="Post's Content..."
               type="text"
               value={text}
@@ -70,7 +62,6 @@ function CreatePost(props) {
           Submit Post
         </button>
       </div>
-      
     </div>
   );
 }
