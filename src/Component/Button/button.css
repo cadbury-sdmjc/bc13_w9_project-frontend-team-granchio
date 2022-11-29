@@ -5,6 +5,8 @@
   background-color: hsl(44, 100%, 58%);
   padding: 8px 12px;
   border: none;
+  margin-bottom: 4px;
+  margin-right: 4px;
 }
 
 .duck-button:hover {

@@ -65,7 +65,7 @@ function App() {
           <Forum showForum={onClick} isShown={isShown}></Forum>
         </UserContext.Provider>
       )}
-      <div>{AiDuckShown && <AIDuck></AIDuck>}</div>
+      {AiDuckShown && <AIDuck></AIDuck>}
     </header>
   );
 }

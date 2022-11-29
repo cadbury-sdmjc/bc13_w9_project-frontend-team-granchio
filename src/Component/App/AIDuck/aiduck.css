@@ -1,0 +1,12 @@
+.aiduck-container {
+  background-color: #83bfcd;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.aiduck-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}

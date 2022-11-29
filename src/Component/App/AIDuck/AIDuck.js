@@ -1,4 +1,7 @@
 import React, { useState, useReducer } from "react";
+import "./aiduck.css";
+import Button from "../../Button/Button";
+
 const sadKeanu =
   "https://media.vanityfair.com/photos/5df907d66056aa0008852c0a/master/pass/the-decade-in-content-sad-keanu.jpg";
 const happyAkita = "https://sayingimages.com/wp-content/uploads/super-happy-memes.jpg";
@@ -59,36 +62,27 @@ function CreateDuck(props) {
   }
 
   return (
-    <div className="form-container-parent">
-      <form>
-        <div className="content-div">
-          <h2>Robot AI Cyber Ducky</h2>
-          {submitButtonShown && (
-            <label>
-              How are you feeling today?
-              <textarea
-                placeholder="Hello, I am a Duck. What can I do for you?"
-                type="text"
-                value={text}
-                onChange={handleChange}
-              ></textarea>
-            </label>
-          )}
-          {isShown && <textarea type="text" value={state.emotion} readOnly></textarea>}
-        </div>
-      </form>
+    <div class="aiduck-container">
+      <h2>Robot AI Cyber Ducky</h2>
+      {submitButtonShown && (
+        <>
+          <label for="aiduck-input">How are you feeling today?</label>
+          <textarea
+            placeholder="Hello, I am a Duck. What can I do for you?"
+            type="text"
+            value={text}
+            onChange={handleChange}
+            className="aiduck-textarea"
+            id="aiduck-input"
+          ></textarea>
+        </>
+      )}
+      {isShown && <p>{state.emotion}</p>}
+      <div style={{ margin: "4px 0" }}>
+        {submitButtonShown && <Button onClick={handleClick}>Click for helpful duck advice</Button>}
+        {resetButtonShown && <Button onClick={handleClickReset}>Need more robot advice??</Button>}
+      </div>
       <div className="btn-div">
-        {submitButtonShown && (
-          <button className="button" type="button" onClick={handleClick}>
-            Click for helpful duck advice
-          </button>
-        )}
-        {resetButtonShown && (
-          <button className="button" type="button" onClick={handleClickReset}>
-            Need more robot advice??
-          </button>
-        )}
-
         {resetButtonShown && (
           <div>
             <img alt="happy/sad" src={state.image} style={{ height: "400px" }} />
