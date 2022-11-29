@@ -67,21 +67,23 @@ function CreateDuck(props) {
       {submitButtonShown && (
         <>
           <label for="aiduck-input">How are you feeling today?</label>
-          <textarea
-            placeholder="Hello, I am a Duck. What can I do for you?"
-            type="text"
-            value={text}
-            onChange={handleChange}
-            className="aiduck-textarea"
-            id="aiduck-input"
-          ></textarea>
+          <div style={{ display: "flex" }}>
+            <div style={{ flexGrow: 1, marginRight: "4px" }}>
+              <textarea
+                placeholder="Hello, I am a Duck. What can I do for you?"
+                type="text"
+                value={text}
+                onChange={handleChange}
+                className="aiduck-textarea"
+                id="aiduck-input"
+              ></textarea>
+            </div>
+            <Button onClick={handleClick}>Click for helpful duck advice</Button>
+          </div>
         </>
       )}
       {isShown && <p>{state.emotion}</p>}
-      <div style={{ margin: "4px 0" }}>
-        {submitButtonShown && <Button onClick={handleClick}>Click for helpful duck advice</Button>}
-        {resetButtonShown && <Button onClick={handleClickReset}>Need more robot advice??</Button>}
-      </div>
+      {resetButtonShown && <Button onClick={handleClickReset}>Need more robot advice??</Button>}
       <div className="btn-div">
         {resetButtonShown && (
           <div>
